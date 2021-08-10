@@ -7,5 +7,5 @@ def longestCommonPrefix(strs):
             if other[i] != ch:
                 return shortest[:i]
     return shortest
-strs = ['abcxy','defxy','ghixy']
+strs = ['Pray','Prey','Prank']
 print(longestCommonPrefix(strs))
