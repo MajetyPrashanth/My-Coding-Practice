@@ -39,6 +39,22 @@ class Node
             current = current.next;
         }
     }
+    public void delete(int pos)
+    {
+        Node temp = head, prev = null;
+        if(pos==0)
+        {
+            head = temp.next;
+            return;
+        }
+        for(int i=0; temp.next != null && i < pos-1; i++)
+            temp = temp.next;
+        if(temp == null || temp.next == null)
+            System.out.println("\nReached position : "+pos);
+        Node next = temp.next.next;
+        System.out.println("\n\nDeleted Element is : "+temp.next.data+"\n");
+        temp.next = next;
+    }
 public static void main(String [] args)
     {
         SinglyLinkedList sl = new SinglyLinkedList();
@@ -47,6 +63,8 @@ public static void main(String [] args)
         sl.add(30);
         sl.add(40);
         //to display all items : 
+        sl.display();
+        sl.delete(2);
         sl.display();
     }
 }
